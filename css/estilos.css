@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,4001,700,7001');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(38, 37, 37, 0.36);
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 400px;
+    background-color: #FFF;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%) perspective(2000px);
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5), 0 20px 100px rgba(0, 0, 0, 0.5);
+    transition: 1s;
+}
+
+.card:hover {
+    transform: translate(-50%, -50%) perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5), 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #46070d;
+    transform-origin: bottom;
+    transform: skewX(-45deg);
+}
+.card:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 5px;
+    height: 100%;
+    background-color: #8f0b18;
+    transform-origin: left;
+    transform: skewY(-45deg);
+}
+
+.imgBox img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.card .imgBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-origin: left;
+    transition: 1s cubic-bezier(.15, 1.7, .84, .58);
+}
+
+.card:hover .imgBox {
+    transform: rotateY(-135deg);
+}
+
+.card .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    z-index: -1;
+}
+
+.card .details h2 {
+    margin-bottom: 20px;
+}
+
+
+.balloons-container {
+    position: relative;
+}
+
+.balloon {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background-color: #f00;
+    border-radius: 50%;
+    animation: floatUp linear infinite;
+}
+
+.red {
+    background-color: #f00;
+    left: 10%;
+    animation-duration: 3s;
+}
+
+.blue {
+    background-color: #00f;
+    left: 30%;
+    animation-duration: 5s;
+}
+
+.green {
+    background-color: #0f0;
+    left: 50%;
+    animation-duration: 7s;
+}
+.yellow{
+    background-color: rgb(255, 255, 0);
+    left: 30%;
+    animation-duration: 9s;
+}
+.pink{
+    background-color: rgb(221, 0, 255);
+    left: 30%;
+    animation-duration: 11s;
+}
+.purple{
+    background-color: rgb(174, 0, 255);
+    left: 30%;
+    animation-duration: 5s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2);
+    }
+}
+  
+  
